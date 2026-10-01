@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Badranagank - Custom kaos, jersey, hoodie, jaket, polo, topi, totebag, seragam dan apparel lainnya.">
+<title>Badranagank — Custom Apparel & Produk</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:#172033;background:#f7f9fc;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,calc(100% - 32px));margin:auto}
+header{background:#0b1f44;color:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 3px 14px #0002}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;white-space:nowrap}
+.brand img{width:48px;height:48px;object-fit:contain;border-radius:10px}
+.brand span{font-size:18px}
+.menu{display:flex;gap:26px;font-size:14px}.menu a:hover{color:#ffd400}
+.hero{background:linear-gradient(135deg,#0b1f44,#173f83);color:#fff;padding:82px 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.badge{display:inline-block;border:1px solid #ffd400;color:#ffd400;border-radius:999px;padding:7px 14px;font-size:12px;font-weight:800;margin-bottom:18px}
+.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin-bottom:24px}
+.hero p{font-size:17px;color:#e6edff;margin-bottom:28px}
+.buttons{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:10px;font-weight:800;font-size:14px}
+.primary{background:#ffd400;color:#111}.secondary{border:1px solid #ffffff70;color:#fff}
+.hero-card{background:#ffffff12;border:1px solid #ffffff30;border-radius:22px;padding:30px}
+.hero-card h2{font-size:24px;margin-bottom:8px}.hero-card p{font-size:14px}
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mini-card{background:#ffffff12;border-radius:12px;padding:16px}.mini-card strong{display:block}.mini-card span{font-size:12px;color:#d7e2fb}
+section{padding:76px 0}
+.section-title{text-align:center;max-width:760px;margin:0 auto 42px}
+.section-title small{display:block;color:#2455a4;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.section-title h2{font-size:36px;line-height:1.15;margin:8px 0 12px}.section-title p{color:#667085}
+.services{background:#fff}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.service-card{background:#fff;border:1px solid #e1e7f0;border-radius:18px;padding:24px;box-shadow:0 8px 24px #1428500f}
+.service-icon{width:48px;height:48px;display:grid;place-items:center;background:#edf3ff;border-radius:12px;font-size:25px;margin-bottom:15px}
+.service-card h3{font-size:18px;margin-bottom:7px}.service-card p{color:#667085;font-size:14px}
+.steps{background:#f7f9fc}.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:#fff;border:1px solid #e1e7f0;border-radius:18px;padding:24px}
+.number{width:38px;height:38px;border-radius:50%;background:#0b1f44;color:#ffd400;display:grid;place-items:center;font-weight:800;margin-bottom:15px}
+.step h3{margin-bottom:7px}.step p{color:#667085;font-size:14px}
+.portfolio{background:#0b1f44;color:#fff}.portfolio .section-title small{color:#ffd400}.portfolio .section-title p{color:#d7e2fb}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.portfolio-card{background:#fff;color:#172033;border-radius:18px;overflow:hidden}
+.portfolio-card img{width:100%;height:250px;object-fit:cover;background:#eef2f7}
+.portfolio-card-body{padding:18px}.portfolio-card h3{font-size:18px}.portfolio-card p{color:#667085;font-size:13px}
+.cta-section{background:#fff}.cta{background:linear-gradient(135deg,#173f83,#0b1f44);color:#fff;border-radius:24px;padding:44px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.cta h2{font-size:32px;margin-bottom:8px}.cta p{color:#d7e2fb;max-width:650px}
+.social{text-align:center}.social-links{display:flex;justify-content:center;margin-top:20px}.social-links a{background:#fff;border:1px solid #e1e7f0;border-radius:10px;padding:11px 17px;font-weight:700}
+footer{background:#071631;color:#d7e2fb;padding:28px 0;font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.service-grid,.step-grid{grid-template-columns:repeat(2,1fr)}.portfolio-grid{grid-template-columns:repeat(2,1fr)}.cta{flex-direction:column;align-items:flex-start}}
+@media(max-width:620px){
+.container{width:calc(100% - 20px)}
+.nav{min-height:62px;gap:8px}
+.brand{gap:8px}
+.brand img{width:38px;height:38px;border-radius:8px}
+.brand span{font-size:13px}
+.menu{gap:8px;font-size:10px;overflow-x:auto;white-space:nowrap}
+.menu a{padding:5px 0}
+.hero{padding:38px 0 42px}
+.hero-grid{gap:22px}
+.hero h1{font-size:34px;line-height:1.08;margin-bottom:15px}
+.hero p{font-size:14px;line-height:1.55;margin-bottom:18px}
+.badge{font-size:10px;padding:5px 10px;margin-bottom:12px}
+.btn{min-height:43px;padding:0 15px;font-size:12px}
+.hero-card{padding:20px;border-radius:16px}
+.hero-card h2{font-size:20px}
+.hero-card p{font-size:13px;margin-bottom:14px}
+.mini-grid{gap:7px}
+.mini-card{padding:11px}
+.mini-card strong{font-size:13px}
+.mini-card span{font-size:10px}
+section{padding:42px 0}
+.section-title{margin-bottom:24px}
+.section-title h2{font-size:25px}
+.section-title p{font-size:13px}
+.section-title small{font-size:10px}
+.service-grid{grid-template-columns:1fr 1fr;gap:10px}
+.service-card{padding:15px;border-radius:14px}
+.service-icon{width:38px;height:38px;font-size:20px;margin-bottom:9px}
+.service-card h3{font-size:14px;line-height:1.25;margin-bottom:5px}
+.service-card p{font-size:11px;line-height:1.45}
+.step-grid{grid-template-columns:1fr 1fr;gap:10px}
+.step{padding:15px;border-radius:14px}
+.number{width:30px;height:30px;font-size:12px;margin-bottom:9px}
+.step h3{font-size:14px}
+.step p{font-size:11px;line-height:1.45}
+.portfolio-grid{grid-template-columns:1fr 1fr;gap:10px}
+.portfolio-card{border-radius:13px}
+.portfolio-card img{height:145px}
+.portfolio-card-body{padding:12px}
+.portfolio-card h3{font-size:14px;line-height:1.25}
+.portfolio-card p{font-size:10px;line-height:1.4}
+.cta{padding:24px 18px;border-radius:18px;gap:18px}
+.cta h2{font-size:24px}
+.cta p{font-size:13px}
+.social-links a{padding:9px 14px;font-size:12px}
+footer{font-size:11px}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container nav">
+<a class="brand" href="#top"><img src="logo-badranagank.png" alt="Logo Badranagank"><span>BADRANAGANK</span></a>
+<nav class="menu"><a href="#layanan">Layanan</a><a href="#cara">Cara Pesan</a><a href="#portfolio">Portfolio</a><a href="#kontak">Kontak</a></nav>
+</div>
+</header>
+
+<main id="top">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<span class="badge">CUSTOM APPAREL & PRODUK</span>
+<h1>Bikin apparel sesuai keinginan kamu.</h1>
+<p>Kaos, jersey, hoodie, jaket, polo, topi, totebag, seragam, dan berbagai produk custom lainnya. Badranagank siap membantu dari desain sampai jadi.</p>
+<div class="buttons">
+<a class="btn primary" href="#layanan">Lihat Layanan</a>
+<a class="btn secondary" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener">Chat WhatsApp</a>
+</div>
+</div>
+<div class="hero-card">
+<h2>Kenapa pilih Badranagank?</h2>
+<p>Proses sederhana, komunikasi mudah, dan bisa menyesuaikan kebutuhan kamu.</p>
+<div class="mini-grid">
+<div class="mini-card"><strong>Custom</strong><span>Desain sesuai request</span></div>
+<div class="mini-card"><strong>Fleksibel</strong><span>Berbagai jenis produk</span></div>
+<div class="mini-card"><strong>Praktis</strong><span>Konsultasi WhatsApp</span></div>
+<div class="mini-card"><strong>Friendly</strong><span>Mudah untuk pemula</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="layanan" class="services">
+<div class="container">
+<div class="section-title"><small>01 • PRODUK</small><h2>Custom apparel untuk berbagai kebutuhan</h2><p>Untuk personal, komunitas, olahraga, usaha, kelas, acara, maupun kebutuhan sehari-hari.</p></div>
+<div class="service-grid">
+<article class="service-card"><div class="service-icon">👕</div><h3>Custom Kaos</h3><p>Kaos custom untuk personal, komunitas, kelas, acara, usaha, dan kebutuhan sehari-hari.</p></article>
+<article class="service-card"><div class="service-icon">⚽</div><h3>Custom Jersey</h3><p>Jersey olahraga dan tim untuk futsal, sepak bola, running, komunitas, dan event.</p></article>
+<article class="service-card"><div class="service-icon">🧥</div><h3>Hoodie, Sweater & Jaket</h3><p>Outer custom untuk komunitas, brand, tim, atau pemakaian pribadi.</p></article>
+<article class="service-card"><div class="service-icon">👔</div><h3>Polo & Seragam</h3><p>Polo shirt dan seragam custom untuk usaha, organisasi, sekolah, komunitas, dan event.</p></article>
+<article class="service-card"><div class="service-icon">🧢</div><h3>Topi</h3><p>Topi custom untuk identitas brand, komunitas, tim, acara, dan merchandise.</p></article>
+<article class="service-card"><div class="service-icon">👜</div><h3>Totebag</h3><p>Totebag custom untuk merchandise, event, komunitas, usaha, dan promosi.</p></article>
+<article class="service-card"><div class="service-icon">🎨</div><h3>Desain Custom</h3><p>Kirim referensi atau desain dan diskusikan kebutuhanmu bersama kami.</p></article>
+<article class="service-card"><div class="service-icon">🏆</div><h3>Apparel Tim & Event</h3><p>Kebutuhan apparel untuk tim olahraga, komunitas, sekolah, organisasi, dan acara.</p></article>
+</div>
+</div>
+</section>
+
+<section id="cara" class="steps">
+<div class="container">
+<div class="section-title"><small>02 • PROSES</small><h2>Gampang, tinggal konsultasi</h2><p>Mulai dari ide sampai produk siap digunakan.</p></div>
+<div class="step-grid">
+<div class="step"><div class="number">1</div><h3>Hubungi kami</h3><p>Chat WhatsApp dan ceritakan produk yang kamu butuhkan.</p></div>
+<div class="step"><div class="number">2</div><h3>Kirim desain</h3><p>Kirim desain, logo, gambar, atau contoh yang kamu inginkan.</p></div>
+<div class="step"><div class="number">3</div><h3>Diskusi & konfirmasi</h3><p>Bahas produk, ukuran, jumlah, dan detail pesanan.</p></div>
+<div class="step"><div class="number">4</div><h3>Produksi</h3><p>Setelah detail disepakati, pesanan diproses sampai selesai.</p></div>
+</div>
+</div>
+</section>
+
+<section id="portfolio" class="portfolio">
+<div class="container">
+<div class="section-title"><small>03 • PORTFOLIO</small><h2>Contoh karya & produk Badranagank</h2><p>Contoh kaos, jersey, dan apparel custom sebagai referensi untuk ide pesananmu.</p></div>
+<div class="portfolio-grid">
+<article class="portfolio-card"><img src="hasil-sablon-01.png" alt="Hasil sablon custom"><div class="portfolio-card-body"><h3>Kaos Custom</h3><p>Kaos dengan desain custom sesuai kebutuhan.</p></div></article>
+<article class="portfolio-card"><img src="hasil-sablon-02.png" alt="Hasil sablon apparel"><div class="portfolio-card-body"><h3>Custom Apparel</h3><p>Contoh hasil produksi apparel custom.</p></div></article>
+<article class="portfolio-card"><img src="hasil-sablon-03.png" alt="Hasil sablon custom apparel"><div class="portfolio-card-body"><h3>Produk Custom</h3><p>Referensi hasil custom untuk berbagai kebutuhan.</p></div></article>
+<article class="portfolio-card"><img src="desain-kaos-01.png" alt="Desain kaos custom"><div class="portfolio-card-body"><h3>Desain Kaos</h3><p>Contoh desain untuk dijadikan referensi.</p></div></article>
+<article class="portfolio-card"><img src="desain-kaos-02.png" alt="Desain apparel custom"><div class="portfolio-card-body"><h3>Desain Apparel</h3><p>Eksplorasi desain untuk produk custom.</p></div></article>
+<article class="portfolio-card"><img src="desain-kaos-03.png" alt="Desain jersey dan apparel"><div class="portfolio-card-body"><h3>Desain Jersey & Tim</h3><p>Referensi untuk jersey olahraga dan kebutuhan tim.</p></div></article>
+<article class="portfolio-card"><img src="desain-kaos-04.png" alt="Desain custom Badranagank"><div class="portfolio-card-body"><h3>Desain Custom</h3><p>Punya konsep sendiri? Bisa kita diskusikan.</p></div></article>
+</div>
+</div>
+</section>
+
+<section id="kontak" class="cta-section">
+<div class="container">
+<div class="cta">
+<div><h2>Punya ide apparel sendiri?</h2><p>Mau bikin kaos, jersey, hoodie, jaket, polo, topi, totebag, seragam, atau produk custom lainnya? Konsultasikan dulu.</p></div>
+<a class="btn primary" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%20mengenai%20pesanan%20saya%3F" target="_blank" rel="noopener">💬 Konsultasi WhatsApp</a>
+</div>
+</div>
+</section>
+
+<section class="social">
+<div class="container">
+<div class="section-title"><small>04 • KONTAK</small><h2>Temukan Badranagank</h2><p>Untuk pertanyaan dan pemesanan, hubungi kami melalui WhatsApp.</p></div>
+<div class="social-links"><a href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener">💬 WhatsApp</a></div>
+</div>
+</section>
+</main>
+
+<footer><div class="container footer-inner"><strong>BADRANAGANK</strong><span>Custom Apparel & Produk • 2026 Badranagank</span></div></footer>
+</body>
+</html>
