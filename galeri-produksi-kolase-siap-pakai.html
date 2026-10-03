@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentasi Produksi Badranagank</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f8fa;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      background: #071a3d;
+      position: relative;
+      z-index: 100;
+    }
+
+    .navbar {
+      width: min(1180px, 92%);
+      min-height: 76px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 28px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: opacity .2s ease;
+    }
+
+    .nav-menu a:hover {
+      opacity: .75;
+    }
+
+    /* HERO */
+    .hero {
+      background: #071a3d;
+      color: #fff;
+      padding: 72px 20px 82px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      width: min(900px, 92%);
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.1;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: rgba(255,255,255,.82);
+      font-size: 16px;
+    }
+
+    /* PRODUCTION */
+    .production {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      padding: 70px 0 90px;
+    }
+
+    .section-label {
+      color: #d8a900;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      color: #071a3d;
+      margin-bottom: 12px;
+      font-weight: 900;
+    }
+
+    .section-desc {
+      color: #667085;
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    /* CARD */
+    .production-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(7, 26, 61, .10);
+      overflow: hidden;
+    }
+
+    .production-card h3 {
+      color: #071a3d;
+      font-size: 22px;
+      margin-bottom: 22px;
+      font-weight: 900;
+    }
+
+    /* COLLAGE */
+    .production-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      width: 100%;
+    }
+
+    .production-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #eef1f5;
+      aspect-ratio: 4 / 3;
+    }
+
+    .production-item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .production-item:hover img {
+      transform: scale(1.035);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #071a3d;
+      color: #fff;
+      padding: 34px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: rgba(255,255,255,.75);
+    }
+
+    /* WHATSAPP */
+    .wa-button {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: 900;
+      box-shadow: 0 8px 24px rgba(0,0,0,.20);
+      z-index: 999;
+    }
+
+    /* TABLET */
+    @media (max-width: 850px) {
+      .navbar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .nav-menu {
+        justify-content: center;
+        gap: 16px 22px;
+      }
+
+      .hero {
+        padding: 55px 20px 65px;
+      }
+
+      .production-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 560px) {
+      .logo {
+        font-size: 20px;
+      }
+
+      .nav-menu {
+        gap: 12px 16px;
+      }
+
+      .nav-menu a {
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        font-size: 31px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .production {
+        padding: 50px 0 65px;
+      }
+
+      .production-card {
+        padding: 16px;
+        border-radius: 14px;
+      }
+
+      .production-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .production-item {
+        aspect-ratio: 4 / 3;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">BADRANAGANK</a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="cara-pesan.html">Cara Pesan</a></li>
+        <li><a href="galeri-produksi.html">Produksi</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="hubungi.html">Hubungi</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Dokumentasi Produksi Badranagank</h1>
+      <p>
+        Dokumentasi mesin, proses printing, finishing, sampai pesanan
+        yang sudah selesai.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRODUCTION -->
+  <main class="production">
+    <div class="section-label">PRODUKSI NYATA</div>
+
+    <h2 class="section-title">Dokumentasi Produksi</h2>
+
+    <p class="section-desc">
+      Lihat berbagai dokumentasi proses produksi Badranagank dalam satu
+      tampilan kolase.
+    </p>
+
+    <section class="production-card">
+      <h3>Area Produksi</h3>
+
+      <div class="production-grid">
+
+        <div class="production-item">
+          <img src="badranagank-produksi-06.jpg"
+               alt="Dokumentasi produksi Badranagank"
+               loading="lazy">
+        </div>
+
+        <div class="production-item">
+          <img src="badranagank_APPAREL_SEPARAT...jpg"
+               alt="Produksi apparel Badranagank"
+               loading="lazy"
+               onerror="this.parentElement.style.display='none'">
+        </div>
+
+        <div class="production-item">
+          <img src="desain-kaos-01.png"
+               alt="Desain kaos Badranagank"
+               loading="lazy">
+        </div>
+
+        <div class="production-item">
+          <img src="desain-kaos-02.png"
+               alt="Desain kaos Badranagank"
+               loading="lazy">
+        </div>
+
+        <div class="production-item">
+          <img src="desain-kaos-03.png"
+               alt="Desain kaos Badranagank"
+               loading="lazy">
+        </div>
+
+        <div class="production-item">
+          <img src="desain-kaos-04.png"
+               alt="Desain kaos Badranagank"
+               loading="lazy">
+        </div>
+
+        <div class="production-item">
+          <img src="hasil-sablon-01.png"
+               alt="Hasil sablon Badranagank"
+               loading="lazy">
+        </div>
+
+        <div class="production-item">
+          <img src="hasil-sablon-02.png"
+               alt="Hasil sablon Badranagank"
+               loading="lazy">
+        </div>
+
+        <div class="production-item">
+          <img src="hasil-sablon-03.png"
+               alt="Hasil sablon Badranagank"
+               loading="lazy">
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Badranagank. All Rights Reserved.</p>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a class="wa-button"
+     href="https://wa.me/"
+     target="_blank"
+     aria-label="WhatsApp">
+    WA
+  </a>
+
+</body>
+</html>
