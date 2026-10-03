@@ -1,5 +1,239 @@
 <!DOCTYPE html>
+<html lang="id"><!DOCTYPE html>
 <html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Galeri Produksi Badranagank — dokumentasi mesin, proses printing, finishing dan pesanan.">
+<title>Galeri Produksi — Badranagank</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:#172033;background:#f5f7fb;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:min(1100px,calc(100% - 28px));margin:auto}
+header{background:#0b1f44;color:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 3px 14px #0002}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;white-space:nowrap}
+.brand img{width:44px;height:44px;object-fit:contain;border-radius:9px}
+.brand span{font-size:17px}
+.menu{display:flex;gap:22px;font-size:13px}
+.menu a:hover{color:#ffd400}
+.mobile-main-links{display:none}
+.mobile-menu-btn{display:none;width:40px;height:40px;border:1px solid #ffffff44;background:#ffffff12;color:#fff;border-radius:9px;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.mobile-menu-btn span{width:19px;height:2px;background:#fff;border-radius:2px}
+.mobile-menu-panel{display:none}
+
+.hero{background:linear-gradient(135deg,#0b1f44,#173f83);color:#fff;padding:54px 0 48px}
+.hero-inner{text-align:center;max-width:840px;margin:auto}
+.badge{display:inline-block;color:#ffd400;border:1px solid #ffd400;border-radius:999px;padding:6px 12px;font-size:11px;font-weight:800;margin-bottom:12px}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.1;margin-bottom:10px}
+.hero p{color:#dfe8fb;font-size:15px}
+
+.gallery-section{padding:50px 0 72px}
+.section-head{text-align:center;margin-bottom:24px}
+.section-head small{display:block;color:#2455a4;font-weight:800;letter-spacing:1px;font-size:11px}
+.section-head h2{font-size:30px;line-height:1.15;margin:7px 0 8px}
+.section-head p{font-size:13px;color:#667085}
+.slider{position:relative;max-width:980px;margin:auto}
+.viewport{overflow:hidden;border-radius:20px}
+.track{display:flex;transition:transform .45s ease}
+.slide{flex:0 0 100%;padding:4px}
+.photo-card{background:#fff;border:1px solid #dfe5ee;border-radius:18px;padding:18px;box-shadow:0 8px 26px #14285012}
+.photo-title{text-align:center;margin-bottom:14px}
+.photo-title h3{font-size:22px;margin-bottom:4px}
+.photo-title p{font-size:12px;color:#667085}
+.photo-frame{background:#eef1f5;border:1px solid #e0e5ec;border-radius:14px;overflow:hidden}
+.photo-frame img{width:100%;height:540px;object-fit:contain;background:#eef1f5}
+.photo-caption{text-align:center;background:#fff;padding:10px;font-size:12px;font-weight:700;color:#172033}
+
+.arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border:none;border-radius:50%;background:#ffd400;color:#111;font-size:26px;font-weight:800;cursor:pointer;z-index:5;box-shadow:0 5px 16px #0003}
+.prev{left:-23px}.next{right:-23px}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:17px}
+.dot{width:10px;height:10px;border:none;border-radius:50%;background:#bbc4d1;cursor:pointer;padding:0}
+.dot.active{background:#0b1f44}
+
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+.actions a{padding:11px 18px;border:1px solid #d8dee8;border-radius:10px;background:#fff;font-size:13px;font-weight:800}
+.actions .wa{background:#25D366;color:#fff;border-color:#25D366;box-shadow:0 6px 16px #25d36644}
+
+footer{background:#071631;color:#d7e2fb;padding:25px 0;font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+
+@media(max-width:620px){
+.container{width:calc(100% - 20px)}
+.nav{min-height:62px}
+.brand img{width:38px;height:38px}
+.brand span{font-size:13px}
+.menu{display:none}
+.mobile-main-links{display:flex;gap:7px;margin-left:auto;margin-right:3px}
+.mobile-main-links a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 10px;border-radius:8px;font-size:10px;font-weight:800}
+.mobile-main-links a:last-child{background:#25D366}
+.mobile-menu-btn{display:flex}
+.mobile-menu-panel{display:none;position:absolute;top:calc(100% + 7px);right:0;width:210px;padding:9px;background:#0b1f44;border:1px solid #ffffff25;border-radius:12px;box-shadow:0 12px 26px #0004}
+.mobile-menu-panel.open{display:block}
+.mobile-menu-panel a{display:block;color:#fff;padding:10px 11px;border-radius:8px;font-size:12px;font-weight:700}
+.hero{padding:38px 0 34px}
+.hero h1{font-size:32px}
+.hero p{font-size:13px}
+.gallery-section{padding:36px 0 52px}
+.section-head h2{font-size:25px}
+.section-head p{font-size:11px}
+.photo-card{padding:11px;border-radius:14px}
+.photo-title h3{font-size:19px}
+.photo-title p{font-size:10px}
+.photo-frame img{height:330px}
+.photo-caption{font-size:10px;padding:8px}
+.arrow{width:38px;height:38px;font-size:20px}
+.prev{left:-2px}.next{right:-2px}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container nav" style="position:relative">
+<a class="brand" href="index.html"><img src="logo-badranagank.png" alt="Logo Badranagank"><span>BADRANAGANK</span></a>
+
+<nav class="menu">
+<a href="index.html">Beranda</a>
+<a href="index.html#layanan">Layanan</a>
+<a href="index.html#cara">Cara Pesan</a>
+<a href="galeri-produksi.html">Produksi</a>
+<a href="index.html#portfolio">Portfolio</a>
+<a href="index.html#kontak">Hubungi</a>
+</nav>
+
+<div class="mobile-main-links">
+<a href="index.html">Beranda</a>
+<a href="index.html#kontak">Hubungi</a>
+</div>
+
+<button class="mobile-menu-btn" id="menuBtn" type="button" aria-label="Buka menu" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+
+<div class="mobile-menu-panel" id="menuPanel">
+<a href="index.html#layanan">Layanan</a>
+<a href="index.html#cara">Cara Pesan</a>
+<a href="galeri-produksi.html">Produksi</a>
+<a href="index.html#portfolio">Portfolio</a>
+<a href="index.html#kontak">Hubungi</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-inner">
+<span class="badge">GALERI PRODUKSI</span>
+<h1>Dokumentasi Produksi Badranagank</h1>
+<p>Geser kiri-kanan untuk melihat dokumentasi mesin, proses printing, finishing, sampai pesanan yang sudah selesai.</p>
+</div>
+</section>
+
+<section class="gallery-section">
+<div class="container">
+<div class="section-head">
+<small>PRODUKSI NYATA</small>
+<h2>Satu foto per slide</h2>
+<p>Setiap slide berdiri sendiri supaya foto tidak bercampur.</p>
+</div>
+
+<div class="slider">
+<button class="arrow prev" id="prev" type="button" aria-label="Foto sebelumnya">‹</button>
+<div class="viewport">
+<div class="track" id="track">
+
+<div class="slide"><div class="photo-card">
+<div class="photo-title"><h3>Area Produksi</h3><p>Dokumentasi mesin yang digunakan dalam proses pengerjaan.</p></div>
+<figure class="photo-frame"><img src="badranagank-produksi-01.jpg" alt="Area produksi Badranagank"><figcaption class="photo-caption">MESIN PRODUKSI</figcaption></figure>
+</div></div>
+
+<div class="slide"><div class="photo-card">
+<div class="photo-title"><h3>Proses Cetak</h3><p>Dokumentasi pengerjaan custom pada apparel.</p></div>
+<figure class="photo-frame"><img src="badranagank-produksi-02.jpg" alt="Proses cetak kaos Badranagank"><figcaption class="photo-caption">PROSES CETAK</figcaption></figure>
+</div></div>
+
+<div class="slide"><div class="photo-card">
+<div class="photo-title"><h3>Mesin Printing</h3><p>Peralatan printing yang digunakan untuk kebutuhan custom.</p></div>
+<figure class="photo-frame"><img src="badranagank-produksi-03.jpg" alt="Mesin printing Badranagank"><figcaption class="photo-caption">MESIN PRINTING</figcaption></figure>
+</div></div>
+
+<div class="slide"><div class="photo-card">
+<div class="photo-title"><h3>Pesanan Siap Packing</h3><p>Contoh pesanan yang sudah selesai diproses.</p></div>
+<figure class="photo-frame"><img src="badranagank-produksi-04.jpg" alt="Pesanan apparel siap packing"><figcaption class="photo-caption">PESANAN SIAP PACKING</figcaption></figure>
+</div></div>
+
+<div class="slide"><div class="photo-card">
+<div class="photo-title"><h3>Finishing & Press</h3><p>Peralatan finishing dalam proses produksi custom apparel.</p></div>
+<figure class="photo-frame"><img src="badranagank-produksi-05.jpg" alt="Mesin press Badranagank"><figcaption class="photo-caption">FINISHING & PRESS</figcaption></figure>
+</div></div>
+
+<div class="slide"><div class="photo-card">
+<div class="photo-title"><h3>Hasil Custom</h3><p>Contoh hasil cetak custom yang siap digunakan pada produk.</p></div>
+<figure class="photo-frame"><img src="badranagank-produksi-06.jpg" alt="Hasil custom Badranagank"><figcaption class="photo-caption">HASIL CUSTOM</figcaption></figure>
+</div></div>
+
+</div>
+</div>
+<button class="arrow next" id="next" type="button" aria-label="Foto berikutnya">›</button>
+<div class="dots" id="dots"></div>
+</div>
+
+<div class="actions">
+<a href="index.html">← Kembali ke Beranda</a>
+<a class="wa" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener">💬 Chat WhatsApp</a>
+</div>
+</div>
+</section>
+
+<footer><div class="container footer-inner"><strong>BADRANAGANK</strong><span>Custom Apparel & Produk • 2026</span></div></footer>
+
+<script>
+(function(){
+const track=document.getElementById('track');
+const slides=[...track.children];
+const dots=document.getElementById('dots');
+const prev=document.getElementById('prev');
+const next=document.getElementById('next');
+let index=0,startX=0,currentX=0,touching=false;
+function render(){
+ track.style.transform='translateX(-'+(index*100)+'%)';
+ dots.innerHTML='';
+ slides.forEach((_,i)=>{
+  const b=document.createElement('button');
+  b.type='button'; b.className='dot'+(i===index?' active':'');
+  b.setAttribute('aria-label','Foto '+(i+1));
+  b.onclick=()=>{index=i;render()};
+  dots.appendChild(b);
+ });
+}
+prev.onclick=()=>{index=Math.max(0,index-1);render()};
+next.onclick=()=>{index=Math.min(slides.length-1,index+1);render()};
+track.addEventListener('touchstart',e=>{startX=currentX=e.touches[0].clientX;touching=true},{passive:true});
+track.addEventListener('touchmove',e=>{if(touching)currentX=e.touches[0].clientX},{passive:true});
+track.addEventListener('touchend',()=>{
+ if(!touching)return;
+ const diff=currentX-startX;
+ if(Math.abs(diff)>45){if(diff<0)index=Math.min(slides.length-1,index+1);else index=Math.max(0,index-1);render();}
+ touching=false;
+});
+render();
+})();
+
+(function(){
+const btn=document.getElementById('menuBtn');
+const panel=document.getElementById('menuPanel');
+if(!btn||!panel)return;
+btn.onclick=function(){
+ const open=panel.classList.toggle('open');
+ btn.setAttribute('aria-expanded',open?'true':'false');
+};
+panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>panel.classList.remove('open')));
+})();
+</script>
+</body>
+</html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
