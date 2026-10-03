@@ -1,4 +1,399 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri Produksi — BADRANAGANK</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #0b1d3a;
+      line-height: 1.5;
+    }
+
+    /* HEADER */
+    header {
+      background: #071b3a;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      width: min(1100px, 92%);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: #153cff;
+      display: grid;
+      place-items: center;
+      color: #ffe000;
+      font-weight: 900;
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      opacity: .95;
+    }
+
+    nav a:hover {
+      color: #ffd400;
+    }
+
+    /* MAIN */
+    main {
+      width: min(1100px, 92%);
+      margin: 30px auto 45px;
+    }
+
+    .production-box {
+      background: #fff;
+      border: 1px solid #dce3ed;
+      border-radius: 12px;
+      padding: 25px 28px 30px;
+      box-shadow: 0 2px 8px rgba(11, 29, 58, .08);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .section-title h1 {
+      font-size: 24px;
+      color: #071b3a;
+      margin-bottom: 5px;
+    }
+
+    .section-title p {
+      color: #7b8798;
+      font-size: 12px;
+    }
+
+    /* KOLESE FOTO */
+    .production-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .production-item {
+      background: #eef2f7;
+      border: 1px solid #d9e0ea;
+      border-radius: 9px;
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .production-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 18px rgba(7, 27, 58, .12);
+    }
+
+    .production-item img {
+      width: 100%;
+      height: 250px;
+      display: block;
+      object-fit: cover;
+      background: #eef2f7;
+    }
+
+    .production-caption {
+      background: #fff;
+      padding: 10px 12px;
+      text-align: center;
+      color: #071b3a;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* TOMBOL */
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 120px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid #d7dee8;
+      background: #fff;
+      color: #071b3a;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-wa {
+      background: #20d66b;
+      color: #fff;
+      border-color: #20d66b;
+      box-shadow: 0 5px 12px rgba(32, 214, 107, .2);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #071b3a;
+      color: #fff;
+      min-height: 65px;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-inner {
+      width: min(1100px, 92%);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+    }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      right: 28px;
+      bottom: 20px;
+      background: #20d66b;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0,0,0,.18);
+      z-index: 200;
+    }
+
+    /* TABLET */
+    @media (max-width: 800px) {
+      nav {
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 9px;
+      }
+
+      .production-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* HP */
+    @media (max-width: 560px) {
+      header {
+        height: auto;
+        padding: 12px 0;
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      main {
+        width: 94%;
+        margin-top: 18px;
+      }
+
+      .production-box {
+        padding: 20px 14px 22px;
+      }
+
+      .production-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 9px;
+      }
+
+      .production-item img {
+        height: 170px;
+      }
+
+      .production-caption {
+        font-size: 9px;
+        padding: 8px 5px;
+      }
+
+      .section-title h1 {
+        font-size: 20px;
+      }
+
+      .footer-inner {
+        padding: 12px 0;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .floating-wa {
+        right: 15px;
+        bottom: 15px;
+        padding: 11px 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <a href="#" class="brand">
+        <span class="brand-logo">Z</span>
+        BADRANAGANK
+      </a>
+
+      <nav>
+        <a href="#">Beranda</a>
+        <a href="#">Layanan</a>
+        <a href="#">Cara Pesan</a>
+        <a href="#">Produksi</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Hubungi</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- AREA PRODUKSI -->
+  <main>
+    <section class="production-box">
+
+      <div class="section-title">
+        <h1>Area Produksi</h1>
+        <p>Dokumentasi mesin yang digunakan dalam proses pengerjaan.</p>
+      </div>
+
+      <!--
+        SEMUA FOTO DITAMPILKAN SEKALIGUS.
+        Tidak ada slider, tombol kiri/kanan, atau indikator slide.
+
+        GANTI nama file di bawah sesuai foto kamu:
+        produksi1.jpg
+        produksi2.jpg
+        produksi3.jpg
+        dst.
+      -->
+      <div class="production-gallery">
+
+        <div class="production-item">
+          <img src="produksi1.jpg" alt="Mesin produksi 1">
+          <div class="production-caption">Mesin Produksi</div>
+        </div>
+
+        <div class="production-item">
+          <img src="produksi2.jpg" alt="Mesin produksi 2">
+          <div class="production-caption">Mesin Produksi</div>
+        </div>
+
+        <div class="production-item">
+          <img src="produksi3.jpg" alt="Mesin produksi 3">
+          <div class="production-caption">Mesin Produksi</div>
+        </div>
+
+        <div class="production-item">
+          <img src="produksi4.jpg" alt="Mesin produksi 4">
+          <div class="production-caption">Mesin Produksi</div>
+        </div>
+
+        <div class="production-item">
+          <img src="produksi5.jpg" alt="Mesin produksi 5">
+          <div class="production-caption">Mesin Produksi</div>
+        </div>
+
+        <div class="production-item">
+          <img src="produksi6.jpg" alt="Mesin produksi 6">
+          <div class="production-caption">Mesin Produksi</div>
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <a href="index.html" class="btn">← Kembali ke Beranda</a>
+
+        <!-- GANTI nomor WhatsApp -->
+        <a href="https://wa.me/6281234567890" class="btn btn-wa" target="_blank">
+          Chat WhatsApp
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <strong>BADRANAGANK</strong>
+      <span>Custom Apparel & Produk • 2026</span>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/6281234567890" class="floating-wa" target="_blank">
+    Chat WhatsApp
+  </a>
+
+</body>
+</html>
+
 <html lang="id">
 <head>
 <meta charset="UTF-8">
