@@ -101,6 +101,24 @@ section{padding:42px 0}
 .social-links a{padding:9px 14px;font-size:12px}
 footer{font-size:11px}
 }
+
+/* PORTFOLIO SLIDER */
+.portfolio-wrap{position:relative}
+.portfolio-viewport{overflow:hidden}
+.portfolio-track{display:flex;gap:20px;transition:transform .45s ease}
+.portfolio-slide{flex:0 0 calc((100% - 40px)/3);min-width:0}
+.portfolio-slide .portfolio-card{height:100%}
+.carousel-btn{position:absolute;top:45%;transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:#ffd400;color:#111;font-size:24px;font-weight:800;cursor:pointer;z-index:5;box-shadow:0 4px 12px #0003}
+.carousel-prev{left:-22px}.carousel-next{right:-22px}
+.carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:20px}
+.carousel-dot{width:9px;height:9px;border:0;border-radius:50%;background:#fff6;cursor:pointer;padding:0}
+.carousel-dot.active{background:#ffd400}
+@media(max-width:900px){.portfolio-slide{flex:0 0 calc((100% - 20px)/2)}}
+@media(max-width:620px){
+.portfolio-wrap{padding:0 6px}.portfolio-track{gap:10px}.portfolio-slide{flex:0 0 100%}
+.carousel-btn{width:38px;height:38px;font-size:20px}
+.carousel-prev{left:-2px}.carousel-next{right:-2px}
+}
 </style>
 
 <style>
@@ -179,14 +197,21 @@ footer{font-size:11px}
 <section id="portfolio" class="portfolio">
 <div class="container">
 <div class="section-title"><small>03 • PORTFOLIO</small><h2>Contoh karya & produk Badranagank</h2><p>Contoh kaos, jersey, dan apparel custom sebagai referensi untuk ide pesananmu.</p></div>
-<div class="portfolio-grid">
-<article class="portfolio-card"><img src="hasil-sablon-01.png" alt="Hasil sablon custom"><div class="portfolio-card-body"><h3>Kaos Custom</h3><p>Kaos dengan desain custom sesuai kebutuhan.</p></div></article>
-<article class="portfolio-card"><img src="hasil-sablon-02.png" alt="Hasil sablon apparel"><div class="portfolio-card-body"><h3>Custom Apparel</h3><p>Contoh hasil produksi apparel custom.</p></div></article>
-<article class="portfolio-card"><img src="hasil-sablon-03.png" alt="Hasil sablon custom apparel"><div class="portfolio-card-body"><h3>Produk Custom</h3><p>Referensi hasil custom untuk berbagai kebutuhan.</p></div></article>
-<article class="portfolio-card"><img src="desain-kaos-01.png" alt="Desain kaos custom"><div class="portfolio-card-body"><h3>Desain Kaos</h3><p>Contoh desain untuk dijadikan referensi.</p></div></article>
-<article class="portfolio-card"><img src="desain-kaos-02.png" alt="Desain apparel custom"><div class="portfolio-card-body"><h3>Desain Apparel</h3><p>Eksplorasi desain untuk produk custom.</p></div></article>
-<article class="portfolio-card"><img src="desain-kaos-03.png" alt="Desain jersey dan apparel"><div class="portfolio-card-body"><h3>Desain Jersey & Tim</h3><p>Referensi untuk jersey olahraga dan kebutuhan tim.</p></div></article>
-<article class="portfolio-card"><img src="desain-kaos-04.png" alt="Desain custom Badranagank"><div class="portfolio-card-body"><h3>Desain Custom</h3><p>Punya konsep sendiri? Bisa kita diskusikan.</p></div></article>
+<div class="portfolio-wrap">
+<button class="carousel-btn carousel-prev" type="button" aria-label="Foto sebelumnya">‹</button>
+<div class="portfolio-viewport">
+<div class="portfolio-track" id="portfolioTrack">
+<div class="portfolio-slide"><article class="portfolio-card"><img src="hasil-sablon-01.png" alt="Hasil sablon custom"><div class="portfolio-card-body"><h3>Kaos Custom</h3><p>Kaos dengan desain custom sesuai kebutuhan.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="hasil-sablon-02.png" alt="Hasil sablon apparel"><div class="portfolio-card-body"><h3>Custom Apparel</h3><p>Contoh hasil produksi apparel custom.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="hasil-sablon-03.png" alt="Hasil sablon custom apparel"><div class="portfolio-card-body"><h3>Produk Custom</h3><p>Referensi hasil custom untuk berbagai kebutuhan.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="desain-kaos-01.png" alt="Desain kaos custom"><div class="portfolio-card-body"><h3>Desain Kaos</h3><p>Contoh desain untuk dijadikan referensi.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="desain-kaos-02.png" alt="Desain apparel custom"><div class="portfolio-card-body"><h3>Desain Apparel</h3><p>Eksplorasi desain untuk produk custom.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="desain-kaos-03.png" alt="Desain jersey dan apparel"><div class="portfolio-card-body"><h3>Desain Jersey & Tim</h3><p>Referensi untuk jersey olahraga dan kebutuhan tim.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="desain-kaos-04.png" alt="Desain custom Badranagank"><div class="portfolio-card-body"><h3>Desain Custom</h3><p>Punya konsep sendiri? Bisa kita diskusikan.</p></div></article></div>
+</div>
+</div>
+<button class="carousel-btn carousel-next" type="button" aria-label="Foto berikutnya">›</button>
+<div class="carousel-dots" id="portfolioDots"></div>
 </div>
 </div>
 </section>
@@ -209,5 +234,48 @@ footer{font-size:11px}
 </main>
 
 <footer><div class="container footer-inner"><strong>BADRANAGANK</strong><span>Custom Apparel & Produk • 2026 Badranagank</span></div></footer>
+
+<script>
+(function(){
+const track=document.getElementById('portfolioTrack');
+const dots=document.getElementById('portfolioDots');
+const prev=document.querySelector('.carousel-prev');
+const next=document.querySelector('.carousel-next');
+if(!track||!dots||!prev||!next)return;
+const slides=[...track.children];
+let index=0,startX=0,currentX=0,dragging=false;
+
+function visibleCount(){return window.innerWidth<=620?1:window.innerWidth<=900?2:3;}
+function maxIndex(){return Math.max(0,slides.length-visibleCount());}
+function render(){
+  const count=visibleCount(), gap=window.innerWidth<=620?10:20, max=maxIndex();
+  if(index>max)index=max;
+  const width=track.parentElement.clientWidth;
+  const slideWidth=(width-gap*(count-1))/count;
+  track.style.transform='translateX(-'+((slideWidth+gap)*index)+'px)';
+  dots.innerHTML='';
+  for(let i=0;i<=max;i++){
+    const b=document.createElement('button');
+    b.className='carousel-dot'+(i===index?' active':'');
+    b.type='button'; b.setAttribute('aria-label','Buka foto '+(i+1));
+    b.onclick=()=>{index=i;render();};
+    dots.appendChild(b);
+  }
+}
+prev.onclick=()=>{index=Math.max(0,index-1);render();};
+next.onclick=()=>{index=Math.min(maxIndex(),index+1);render();};
+
+track.addEventListener('touchstart',e=>{startX=currentX=e.touches[0].clientX;dragging=true},{passive:true});
+track.addEventListener('touchmove',e=>{if(dragging)currentX=e.touches[0].clientX},{passive:true});
+track.addEventListener('touchend',()=>{
+ if(!dragging)return;
+ const diff=currentX-startX;
+ if(Math.abs(diff)>45){if(diff<0)index=Math.min(maxIndex(),index+1);else index=Math.max(0,index-1);}
+ dragging=false;render();
+});
+window.addEventListener('resize',render);
+render();
+})();
+</script>
 </body>
 </html>
