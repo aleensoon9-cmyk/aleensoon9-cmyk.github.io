@@ -191,6 +191,91 @@ footer{font-size:11px}
   .wa-btn{min-height:50px !important;font-size:14px !important;padding:0 18px !important}
   .wa-float{right:14px;bottom:14px;padding:12px 15px;font-size:13px}
 }
+
+/* MOBILE HEADER MENU */
+.mobile-menu-btn{
+  display:none;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  border-radius:10px;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+}
+.mobile-menu-btn span{
+  display:block;
+  width:20px;
+  height:2px;
+  background:#fff;
+  border-radius:2px;
+}
+.mobile-menu-panel{
+  display:none;
+}
+.mobile-main-links{
+  display:none;
+}
+@media(max-width:620px){
+  .nav{position:relative}
+  .mobile-main-links{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-left:auto;
+    margin-right:6px;
+  }
+  .mobile-main-links a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:38px;
+    padding:0 11px;
+    border-radius:9px;
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+  }
+  .mobile-main-links a:last-child{
+    background:#25D366;
+    color:#fff;
+  }
+  .mobile-menu-btn{display:flex}
+  .menu{display:none !important}
+  .mobile-menu-panel{
+    display:none;
+    position:absolute;
+    top:calc(100% + 8px);
+    right:0;
+    width:min(220px,calc(100vw - 24px));
+    padding:10px;
+    background:#0b1f44;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:14px;
+    box-shadow:0 12px 28px rgba(0,0,0,.28);
+  }
+  .mobile-menu-panel.open{display:block}
+  .mobile-menu-panel a{
+    display:block;
+    padding:11px 12px;
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    border-radius:9px;
+  }
+  .mobile-menu-panel a:hover,
+  .mobile-menu-panel a:focus{
+    background:rgba(255,255,255,.10);
+  }
+  .mobile-menu-panel .wa-mobile{
+    margin-top:5px;
+    background:#25D366;
+  }
+}
 </style>
 
 <style>
@@ -213,7 +298,31 @@ footer{font-size:11px}
 <header>
 <div class="container nav">
 <a class="brand" href="#top"><img src="logo-badranagank.png" alt="Logo Badranagank"><span>BADRANAGANK</span></a>
-<nav class="menu"><a href="#layanan">Layanan</a><a href="#cara">Cara Pesan</a><a href="#produksi">Produksi</a><a href="#portfolio">Portfolio</a><a href="#kontak">Kontak</a></nav>
+<nav class="menu">
+<a href="#top">Beranda</a>
+<a href="#layanan">Layanan</a>
+<a href="#cara">Cara Pesan</a>
+<a href="#produksi">Produksi</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#kontak">Hubungi</a>
+</nav>
+
+<div class="mobile-main-links">
+<a href="#top">Beranda</a>
+<a href="#kontak">Hubungi</a>
+</div>
+
+<button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Buka menu" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+
+<div class="mobile-menu-panel" id="mobileMenuPanel">
+<a href="#layanan">Layanan</a>
+<a href="#cara">Cara Pesan</a>
+<a href="#produksi">Produksi</a>
+<a href="#portfolio">Portfolio</a>
+<a class="wa-mobile" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener">Chat WhatsApp</a>
+</div>
 </div>
 </header>
 
@@ -421,6 +530,37 @@ render();
  fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
 </svg><span>Chat WhatsApp</span>
 </a>
+
+
+<script>
+(function(){
+  const btn = document.getElementById('mobileMenuBtn');
+  const panel = document.getElementById('mobileMenuPanel');
+  if(!btn || !panel) return;
+
+  btn.addEventListener('click', function(){
+    const open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+  });
+
+  panel.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','Buka menu');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if(!panel.contains(e.target) && !btn.contains(e.target)){
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','Buka menu');
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
