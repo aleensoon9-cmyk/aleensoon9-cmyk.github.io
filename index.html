@@ -152,6 +152,45 @@ footer{font-size:11px}
 .production-photo-body h3{font-size:13px}
 .production-photo-body p{font-size:10px;line-height:1.4}
 }
+
+/* WHATSAPP CTA — lebih jelas dan mudah ditemukan */
+.wa-btn{
+  background:#25D366 !important;
+  color:#fff !important;
+  border:2px solid #25D366 !important;
+  font-size:15px !important;
+  font-weight:800 !important;
+  min-height:54px !important;
+  padding:0 22px !important;
+  gap:10px;
+  box-shadow:0 6px 16px rgba(37,211,102,.28);
+}
+.wa-btn:hover{background:#1ebe5b !important;border-color:#1ebe5b !important;transform:translateY(-1px)}
+.wa-icon{width:24px;height:24px;flex:0 0 24px}
+.wa-icon path,.wa-icon circle{vector-effect:non-scaling-stroke}
+.wa-float{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:2000;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#25D366;
+  color:#fff;
+  border:2px solid #fff;
+  border-radius:999px;
+  padding:13px 18px;
+  font-weight:800;
+  font-size:14px;
+  box-shadow:0 8px 22px rgba(0,0,0,.25);
+}
+.wa-float:hover{background:#1ebe5b}
+.wa-float .wa-icon{width:22px;height:22px}
+@media(max-width:620px){
+  .wa-btn{min-height:50px !important;font-size:14px !important;padding:0 18px !important}
+  .wa-float{right:14px;bottom:14px;padding:12px 15px;font-size:13px}
+}
 </style>
 
 <style>
@@ -187,7 +226,11 @@ footer{font-size:11px}
 <p>Kaos, jersey, hoodie, jaket, polo, topi, totebag, seragam, dan berbagai produk custom lainnya. Badranagank mengerjakan kebutuhan custom dari desain, proses produksi, sampai siap dipakai.</p>
 <div class="buttons">
 <a class="btn primary" href="#layanan">Lihat Layanan</a>
-<a class="btn secondary" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener">Chat WhatsApp</a>
+<a class="btn wa-btn" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+<circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2"/>
+<path d="M11.7 10.4c.5-.5 1.3-.7 2-.3l1.7.9c.6.3.9 1 .7 1.6l-.5 1.4c-.1.4 0 .8.3 1.1 1.1 1.3 2.4 2.4 3.9 3.1.4.2.8.1 1.1-.2l1.1-1.1c.4-.4 1-.5 1.5-.2l1.6 1c.7.4.9 1.3.5 2-.5 1.1-1.4 1.8-2.6 2-2.3.4-5.4-.9-7.9-3.1-2.6-2.3-4.1-5.2-4-7.5.1-1.1.6-2 1.6-2.7Z"
+ fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+</svg><span>Chat WhatsApp</span></a>
 </div>
 </div>
 <div class="hero-card">
@@ -305,7 +348,11 @@ footer{font-size:11px}
 <div class="container">
 <div class="cta">
 <div><h2>Punya ide apparel sendiri?</h2><p>Mau bikin kaos, jersey, hoodie, jaket, polo, topi, totebag, seragam, atau produk custom lainnya? Konsultasikan dulu.</p></div>
-<a class="btn primary" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%20mengenai%20pesanan%20saya%3F" target="_blank" rel="noopener">💬 Konsultasi WhatsApp</a>
+<a class="btn wa-btn" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%20mengenai%20pesanan%20saya%3F" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+<circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2"/>
+<path d="M11.7 10.4c.5-.5 1.3-.7 2-.3l1.7.9c.6.3.9 1 .7 1.6l-.5 1.4c-.1.4 0 .8.3 1.1 1.1 1.3 2.4 2.4 3.9 3.1.4.2.8.1 1.1-.2l1.1-1.1c.4-.4 1-.5 1.5-.2l1.6 1c.7.4.9 1.3.5 2-.5 1.1-1.4 1.8-2.6 2-2.3.4-5.4-.9-7.9-3.1-2.6-2.3-4.1-5.2-4-7.5.1-1.1.6-2 1.6-2.7Z"
+ fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+</svg><span>Konsultasi WhatsApp</span></a>
 </div>
 </div>
 </section>
@@ -313,7 +360,11 @@ footer{font-size:11px}
 <section class="social">
 <div class="container">
 <div class="section-title"><small>06 • KONTAK</small><h2>Temukan Badranagank</h2><p>Untuk pertanyaan dan pemesanan, hubungi kami melalui WhatsApp.</p></div>
-<div class="social-links"><a href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener">💬 WhatsApp</a></div>
+<div class="social-links"><a class="wa-btn" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+<circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2"/>
+<path d="M11.7 10.4c.5-.5 1.3-.7 2-.3l1.7.9c.6.3.9 1 .7 1.6l-.5 1.4c-.1.4 0 .8.3 1.1 1.1 1.3 2.4 2.4 3.9 3.1.4.2.8.1 1.1-.2l1.1-1.1c.4-.4 1-.5 1.5-.2l1.6 1c.7.4.9 1.3.5 2-.5 1.1-1.4 1.8-2.6 2-2.3.4-5.4-.9-7.9-3.1-2.6-2.3-4.1-5.2-4-7.5.1-1.1.6-2 1.6-2.7Z"
+ fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+</svg><span>Chat WhatsApp</span></a></div>
 </div>
 </section>
 </main>
@@ -362,5 +413,14 @@ window.addEventListener('resize',render);
 render();
 })();
 </script>
+
+<a class="wa-float" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%20mengenai%20pesanan%20saya%3F" target="_blank" rel="noopener" aria-label="Chat WhatsApp Badranagank">
+  <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+<circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2"/>
+<path d="M11.7 10.4c.5-.5 1.3-.7 2-.3l1.7.9c.6.3.9 1 .7 1.6l-.5 1.4c-.1.4 0 .8.3 1.1 1.1 1.3 2.4 2.4 3.9 3.1.4.2.8.1 1.1-.2l1.1-1.1c.4-.4 1-.5 1.5-.2l1.6 1c.7.4.9 1.3.5 2-.5 1.1-1.4 1.8-2.6 2-2.3.4-5.4-.9-7.9-3.1-2.6-2.3-4.1-5.2-4-7.5.1-1.1.6-2 1.6-2.7Z"
+ fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+</svg><span>Chat WhatsApp</span>
+</a>
+
 </body>
 </html>
