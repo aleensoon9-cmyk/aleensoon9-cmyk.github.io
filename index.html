@@ -545,7 +545,6 @@ render();
       btn.setAttribute('aria-label','Buka menu');
     });
   });
-
   document.addEventListener('click', function(e){
     if(!panel.contains(e.target) && !btn.contains(e.target)){
       panel.classList.remove('open');
