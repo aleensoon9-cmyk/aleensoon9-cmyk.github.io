@@ -336,52 +336,17 @@ footer{font-size:11px}
   .service-group h3{font-size:15px}
   .service-group p{font-size:11px;line-height:1.45;margin:0}
 }
+</style>
 
-/* ICON WHATSAPP & SHOPEE — menggunakan file gambar yang diberikan */
-.social-action{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-}
-.social-action-icon{
-  width:24px;
-  height:24px;
-  object-fit:contain;
-  flex:0 0 24px;
-  border-radius:5px;
-}
-.shopee-btn{
-  background:#ee4d2d !important;
-  color:#fff !important;
-  border:2px solid #ee4d2d !important;
-  font-size:15px !important;
-  font-weight:800 !important;
-  min-height:54px !important;
-  padding:0 22px !important;
-  gap:10px;
-  box-shadow:0 6px 16px rgba(238,77,45,.25);
-}
-.shopee-btn:hover{
-  background:#d94326 !important;
-  border-color:#d94326 !important;
-  transform:translateY(-1px);
-}
-.shopee-icon{
-  width:24px;
-  height:24px;
-  object-fit:contain;
-  flex:0 0 24px;
-  border-radius:5px;
-}
-@media(max-width:620px){
-  .shopee-btn{
-    min-height:50px !important;
-    font-size:14px !important;
-    padding:0 18px !important;
-  }
-}
-
+<style>
+.wa-img,.shopee-img{width:22px;height:22px;object-fit:contain;display:inline-block;flex:0 0 auto}
+.wa-float .wa-img{width:34px;height:34px}
+.shopee-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none}
+.hero .buttons .shopee-btn{background:#fff;color:#111;border:1px solid #e1e7f0}
+.social-links .shopee-btn{background:#fff;color:#111;border:1px solid #e1e7f0}
+.shopee-img{width:23px;height:23px}
+.shopee-mobile{display:flex;align-items:center;gap:8px}
+@media(max-width:620px){.wa-img,.shopee-img{width:20px;height:20px}.wa-float .wa-img{width:30px;height:30px}}
 </style>
 </head>
 <body>
@@ -411,7 +376,8 @@ footer{font-size:11px}
 <a href="#cara">Cara Pesan</a>
 <a href="galeri-produksi.html">Produksi</a>
 <a href="#portfolio">Portfolio</a>
-<a class="wa-mobile" href="https://wa.me/6286174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener">Chat WhatsApp</a>
+<a class="wa-mobile" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener">Chat WhatsApp</a>
+<a class="wa-mobile shopee-mobile" href="https://id.shp.ee/rcx77gm8?fromSource=copy_info&smtt=0.0.9" target="_blank" rel="noopener noreferrer"><img class="shopee-img" src="shopee.png" alt="Shopee"><span>Toko Shopee</span></a>
 </div>
 </div>
 </header>
@@ -425,10 +391,8 @@ footer{font-size:11px}
 <p>Kaos, jersey, hoodie, jaket, polo, topi, totebag, seragam, dan berbagai produk custom lainnya. Badranagank mengerjakan kebutuhan custom dari desain, proses produksi, sampai siap dipakai.</p>
 <div class="buttons">
 <a class="btn primary" href="#layanan">Lihat Layanan</a>
-<a class="btn wa-btn" href="https://wa.me/6286174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener"><img class="social-action-icon" src="whatsapp.png" alt="WhatsApp"><span>Chat WhatsApp</span></a>
-<a class="btn shopee-btn" href="https://id.shp.ee/rcx77gm8?fromSource=copy_info&smtt=0.0.9" target="_blank" rel="noopener">
-<img class="shopee-icon" src="shopee.png" alt="Shopee"><span>Kunjungi Shopee</span>
-</a>
+<a class="btn wa-btn" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener"><img class="wa-img" src="whatsapp.png" alt="WhatsApp"><span>Chat WhatsApp</span></a>
+<a class="btn shopee-btn" href="https://id.shp.ee/rcx77gm8?fromSource=copy_info&smtt=0.0.9" target="_blank" rel="noopener noreferrer"><img class="shopee-img" src="shopee.png" alt="Shopee"><span>Toko Shopee</span></a>
 </div>
 </div>
 <div class="hero-card">
@@ -499,10 +463,7 @@ footer{font-size:11px}
 <div class="container">
 <div class="cta">
 <div><h2>Punya ide apparel sendiri?</h2><p>Mau bikin kaos, jersey, hoodie, jaket, polo, topi, totebag, seragam, atau produk custom lainnya? Konsultasikan dulu.</p></div>
-<a class="btn wa-btn" href="https://wa.me/6286174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%20mengenai%20pesanan%20saya%3F" target="_blank" rel="noopener"><img class="social-action-icon" src="whatsapp.png" alt="WhatsApp"><span>Konsultasi WhatsApp</span></a>
-<a class="btn shopee-btn" href="https://id.shp.ee/rcx77gm8?fromSource=copy_info&smtt=0.0.9" target="_blank" rel="noopener">
-<img class="shopee-icon" src="shopee.png" alt="Shopee"><span>Kunjungi Shopee</span>
-</a>
+<a class="btn wa-btn" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%20mengenai%20pesanan%20saya%3F" target="_blank" rel="noopener"><img class="wa-img" src="whatsapp.png" alt="WhatsApp"><span>Konsultasi WhatsApp</span></a>
 </div>
 </div>
 </section>
@@ -510,10 +471,7 @@ footer{font-size:11px}
 <section class="social">
 <div class="container">
 <div class="section-title"><small>06 • KONTAK</small><h2>Temukan Badranagank</h2><p>Untuk pertanyaan dan pemesanan, hubungi kami melalui WhatsApp.</p></div>
-<div class="social-links"><a class="wa-btn" href="https://wa.me/6286174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener"><img class="social-action-icon" src="whatsapp.png" alt="WhatsApp"><span>Chat WhatsApp</span></a>
-<a class="btn shopee-btn" href="https://id.shp.ee/rcx77gm8?fromSource=copy_info&smtt=0.0.9" target="_blank" rel="noopener">
-<img class="shopee-icon" src="shopee.png" alt="Shopee"><span>Kunjungi Shopee</span>
-</a></div>
+<div class="social-links"><a class="wa-btn" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%3F" target="_blank" rel="noopener"><img class="wa-img" src="whatsapp.png" alt="WhatsApp"><span>Chat WhatsApp</span></a><a class="shopee-btn" href="https://id.shp.ee/rcx77gm8?fromSource=copy_info&smtt=0.0.9" target="_blank" rel="noopener noreferrer"><img class="shopee-img" src="shopee.png" alt="Shopee"><span>Toko Shopee</span></a></div>
 </div>
 </section>
 </main>
@@ -563,8 +521,8 @@ render();
 })();
 </script>
 
-<a class="wa-float" href="https://wa.me/6286174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%20mengenai%20pesanan%20saya%3F" target="_blank" rel="noopener" aria-label="Chat WhatsApp Badranagank">
-  <img class="social-action-icon" src="whatsapp.png" alt="WhatsApp"><span>Chat WhatsApp</span>
+<a class="wa-float" href="https://wa.me/6285174312103?text=Halo%20Badranagank%20%F0%9F%91%8B%0ASaya%20tertarik%20dengan%20produk%20custom%20apparel.%0ABoleh%20saya%20konsultasi%20mengenai%20pesanan%20saya%3F" target="_blank" rel="noopener" aria-label="Chat WhatsApp Badranagank">
+  <img class="wa-img" src="whatsapp.png" alt="WhatsApp"><span>Chat WhatsApp</span>
 </a>
 
 
