@@ -348,6 +348,30 @@ footer{font-size:11px}
 .shopee-mobile{display:flex;align-items:center;gap:8px}
 @media(max-width:620px){.wa-img,.shopee-img{width:20px;height:20px}.wa-float .wa-img{width:30px;height:30px}}
 </style>
+
+<style>
+/* PERBAIKAN TERARAH: header mobile, kontainer, dan target navigasi */
+.container{min-width:0}
+.hero-grid>*,.service-grid>*,.step-grid>*,.portfolio-grid>*,
+.production-intro>*,.production-gallery>*{min-width:0}
+section[id],main[id]{scroll-margin-top:90px}
+
+@media(max-width:620px){
+  .nav{width:100%;min-width:0;gap:6px;flex-wrap:nowrap}
+  .brand{flex:0 1 auto;min-width:0;gap:7px}
+  .brand img{flex:0 0 38px}
+  .brand span{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:clamp(10px,3.1vw,12px)}
+  .mobile-main-links{flex:0 0 auto;gap:4px;margin-left:auto;margin-right:2px}
+  .mobile-main-links a{flex:0 0 auto;min-height:36px;padding:0 7px;font-size:10px;white-space:nowrap}
+  .mobile-menu-btn{flex:0 0 38px;width:38px;height:38px}
+  .mobile-menu-panel{z-index:1001;max-height:min(70vh,420px);overflow-y:auto}
+  section[id],main[id]{scroll-margin-top:72px}
+}
+@media(max-width:350px){
+  .mobile-main-links a{padding-left:5px;padding-right:5px;font-size:9px}
+  .brand{gap:5px}
+}
+</style>
 </head>
 <body>
 <header>
