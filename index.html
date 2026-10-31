@@ -372,6 +372,17 @@ section[id],main[id]{scroll-margin-top:90px}
   .brand{gap:5px}
 }
 </style>
+<style>
+/* PORTOFOLIO STATIS — KOLEKSI FOTO POTRET 9:16 */
+#portfolio .portfolio-collage{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}
+#portfolio .portfolio-card{display:flex;flex-direction:column;min-width:0;background:#fff;border-radius:17px;overflow:hidden}
+#portfolio .portfolio-card img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;object-position:center;background:#e8edf4}
+#portfolio .portfolio-card-body{padding:15px 16px 19px;flex:1}
+#portfolio .portfolio-card h3{font-size:16px;line-height:1.3;margin:0 0 8px}
+#portfolio .portfolio-card p{font-size:12px;line-height:1.55;margin:0;color:#667085}
+@media(max-width:900px){#portfolio .portfolio-collage{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}}
+@media(max-width:620px){#portfolio .portfolio-collage{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#portfolio .portfolio-card-body{padding:11px}#portfolio .portfolio-card h3{font-size:13px}#portfolio .portfolio-card p{font-size:10px}}
+</style>
 </head>
 <body>
 <header>
@@ -463,25 +474,24 @@ section[id],main[id]{scroll-margin-top:90px}
 
 <section id="portfolio" class="portfolio">
 <div class="container">
-<div class="section-title"><small>05 • PORTFOLIO</small><h2>Contoh karya & produk Badranagank</h2><p>Contoh kaos, jersey, dan apparel custom sebagai referensi untuk ide pesananmu.</p></div>
+<div class="section-title"><small>05 • PORTOFOLIO</small><h2>Desain, Hasil Sablon & Dokumentasi</h2><p>Kumpulan contoh desain digital, detail hasil cetak, dan dokumentasi pengerjaan apparel custom BADRANAGANK.</p></div>
 <div class="portfolio-wrap">
 <button class="carousel-btn carousel-prev" type="button" aria-label="Foto sebelumnya">‹</button>
 <div class="portfolio-viewport">
 <div class="portfolio-track" id="portfolioTrack">
-<div class="portfolio-slide"><article class="portfolio-card"><img src="hasil-sablon-01.png" alt="Hasil sablon custom"><div class="portfolio-card-body"><h3>Kaos Custom</h3><p>Kaos dengan desain custom sesuai kebutuhan.</p></div></article></div>
-<div class="portfolio-slide"><article class="portfolio-card"><img src="hasil-sablon-02.png" alt="Hasil sablon apparel"><div class="portfolio-card-body"><h3>Custom Apparel</h3><p>Contoh hasil produksi apparel custom.</p></div></article></div>
-<div class="portfolio-slide"><article class="portfolio-card"><img src="hasil-sablon-03.png" alt="Hasil sablon custom apparel"><div class="portfolio-card-body"><h3>Produk Custom</h3><p>Referensi hasil custom untuk berbagai kebutuhan.</p></div></article></div>
-<div class="portfolio-slide"><article class="portfolio-card"><img src="desain-kaos-01.png" alt="Desain kaos custom"><div class="portfolio-card-body"><h3>Desain Kaos</h3><p>Contoh desain untuk dijadikan referensi.</p></div></article></div>
-<div class="portfolio-slide"><article class="portfolio-card"><img src="desain-kaos-02.png" alt="Desain apparel custom"><div class="portfolio-card-body"><h3>Desain Apparel</h3><p>Eksplorasi desain untuk produk custom.</p></div></article></div>
-<div class="portfolio-slide"><article class="portfolio-card"><img src="desain-kaos-03.png" alt="Desain jersey dan apparel"><div class="portfolio-card-body"><h3>Desain Jersey & Tim</h3><p>Referensi untuk jersey olahraga dan kebutuhan tim.</p></div></article></div>
-<div class="portfolio-slide"><article class="portfolio-card"><img src="desain-kaos-04.png" alt="Desain custom Badranagank"><div class="portfolio-card-body"><h3>Desain Custom</h3><p>Punya konsep sendiri? Bisa kita diskusikan.</p></div></article></div>
-</div>
-</div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="portofolio-01.jpg" alt="Desain Rayan Racing Team" loading="lazy"><div class="portfolio-card-body"><h3>Desain Rayan Racing Team</h3><p>Preview artwork bertema otomotif dengan komposisi ilustrasi dan warna yang mencolok.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="portofolio-02.jpg" alt="Sablon Kaos Grafis Merah Hitam" loading="lazy"><div class="portfolio-card-body"><h3>Sablon Kaos Grafis Merah Hitam</h3><p>Dokumentasi hasil cetak grafis pada kaos hitam dengan kombinasi warna merah, putih, dan ilustrasi figur.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="portofolio-03.jpg" alt="Sablon Garet Siji" loading="lazy"><div class="portfolio-card-body"><h3>Sablon Garet Siji</h3><p>Detail desain ilustrasi harimau dan ornamen berwarna emas pada bahan hitam.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="portofolio-04.jpg" alt="Preview Desain Jersey" loading="lazy"><div class="portfolio-card-body"><h3>Preview Desain Jersey</h3><p>Tampilan rancangan jersey bernomor punggung 10 sebelum masuk tahap produksi.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="portofolio-05.jpg" alt="Hasil Sablon MARS" loading="lazy"><div class="portfolio-card-body"><h3>Hasil Sablon MARS</h3><p>Tampilan hasil cetak logo MARS pada permukaan kain berwarna gelap.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="portofolio-06.jpg" alt="Proses Press Kaos MARS" loading="lazy"><div class="portfolio-card-body"><h3>Proses Press Kaos MARS</h3><p>Dokumentasi kaos saat berada di area mesin heat press dalam proses pengerjaan.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="portofolio-07.jpg" alt="Detail Sablon Emblem" loading="lazy"><div class="portfolio-card-body"><h3>Detail Sablon Emblem</h3><p>Foto dekat hasil cetak emblem dengan kombinasi warna oranye, abu-abu, dan putih.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="portofolio-08.jpg" alt="Detail Layout Jersey" loading="lazy"><div class="portfolio-card-body"><h3>Detail Layout Jersey</h3><p>Tampilan lebih dekat dari layout desain jersey pada layar kerja.</p></div></article></div>
+<div class="portfolio-slide"><article class="portfolio-card"><img src="portofolio-09.jpg" alt="Hasil Kaos Grafis" loading="lazy"><div class="portfolio-card-body"><h3>Hasil Kaos Grafis</h3><p>Tampilan keseluruhan kaos hitam dengan desain grafis merah dan putih setelah dicetak.</p></div></article></div>
+</div></div>
 <button class="carousel-btn carousel-next" type="button" aria-label="Foto berikutnya">›</button>
 <div class="carousel-dots" id="portfolioDots"></div>
-</div>
-</div>
-</section>
+</div></div></section>
 
 <section id="kontak" class="cta-section">
 <div class="container">
